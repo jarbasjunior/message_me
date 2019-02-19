@@ -5,11 +5,11 @@ class SessionsController < ApplicationController
     user = User.find_by(username: params[:session][:username])
     if user&.authenticate(params[:session][:password])
       session[:user_id] = user.id
-      flash[:sucess] = "Bem vindo #{user.username}"
+      flash[:success] = "Bem vindo #{user.username}"
       redirect_to root_path
     else
-      flash.now[:error] = 'Usuario e/ou senha inválidos'
-      render new
+      flash.now[:error] = "Usuario e/ou senha inválidos"
+      render 'new'
     end
   end
 
