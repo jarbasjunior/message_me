@@ -1,42 +1,42 @@
 <h2 class="ui center aligned large header">
-  Welcome to MessageMe - <em>a complete Chat App</em>
+  Bem-vindo ao MessageMe - Seu aplicativo de bate-papo
 </h2>
 
 <h4 class="ui center aligned medium icon header">
   <i class="circular purple power off tiny icon"></i>
-  Log in to continue
+  Realize o login para continuar. Ou cadastre-se
 </h4>
 
 
 <div class="ui placeholder segment">
   <div class="ui two column very relaxed stackable grid">
     <div class="column">
-      <form class="ui form">
+      <%= form_for(:session, html: {class: "ui form", role: "form"}, url: login_path) do |f| %>
         <div class="field">
-          <label>Username</label>
+          <%= f.label :username, "Usuário" %>
           <div class="ui left icon input">
-            <input type="text" placeholder="Username">
+            <%= f.text_field :username, placeholder: "Usuário" %>
             <i class="user icon"></i>
           </div>
         </div>
         <div class="field">
-          <label>Password</label>
+          <%= f.label :password, "Senha" %>
           <div class="ui left icon input">
-            <input type="text" placeholder="Password">
+            <%= f.password_field :password, placeholder: "Senha" %>
             <i class="lock icon"></i>
           </div>
         </div>
-        <button class="ui purple submit button">Login</button>
-      </form>
+        <%= f.button "Login", class: "ui purple submit button" %>
+      <% end %>
     </div>
     <div class="middle aligned column">
       <div class="ui big purple disabled button">
         <i class="signup icon"></i>
-        Sign Up
+        Cadastre-se
       </div>
     </div>
   </div>
   <div class="ui vertical divider">
-    Or
+    Ou
   </div>
 </div>
