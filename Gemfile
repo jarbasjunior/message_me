@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.0'
 
+gem 'awesome_print'
 gem 'bcrypt'
 gem 'hirb'
 gem 'jquery-rails'

@@ -10,9 +10,9 @@ class ApplicationController < ActionController::Base
   end
 
   def require_user
-    return unless logged_in?
+    return if logged_in?
 
-    flash[:danger] = 'You must be logged in to perform that chat action'
+    flash[:error] = 'Você precisa estar logado para executar esta ação!'
     redirect_to login_path
   end
 end
