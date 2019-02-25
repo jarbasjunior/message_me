@@ -1,7 +1,11 @@
-<%= link_to "Sala de Bate-Papo", root_path, class: "ui inverted purple button" %>
-<a class="ui inverted purple button">
-  Mensagens
-</a>
+<div class="item">
+  <%= link_to "Sala de Bate-Papo", root_path, class: "ui inverted purple button" %>
+</div>
+
+<div class="item">
+  <a class="ui inverted purple button">Mensagens</a>
+</div>
+
 <div class="right menu">
   <div class="ui inverted purple dropdown item">
     Conta <i class="dropdown icon"></i>
@@ -13,7 +17,9 @@
       <% end %>
     </div>
   </div>
-  <% unless logged_in? %>
-    <%= link_to "Entrar", login_path, class: "ui purple button" %>
-  <% end %>
+  <div class="item">
+    <% unless logged_in? %>
+      <%= link_to "Entrar", login_path, class: "ui purple button" %>
+    <% end %>
+  </div>
 </div>
